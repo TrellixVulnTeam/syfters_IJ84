@@ -1,0 +1,481 @@
+{%load  static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aboslute estate</title>
+    <link rel="stylesheet" href="{% static 'style/main.css'%}">
+    <link rel="shortcut icon" href="images/absolute-estate.png" type="image/x-icon">
+</head>
+<body class="container">
+    <header class="header properties">
+        <div class="nav">
+            <div class="nav__logo">
+                <img src="{%static 'images/absolute-estate.png' %}" alt="logo" class="logo-img">
+            </div>
+            <div class="nav__items">
+                <ul class="nav__list">
+                    <li class="nav__link"><a href="">home</a></li>
+                    <li class="nav__link"><a href="/lands">properties</a></li>
+                    <li class="nav__link"><a href="/contacts">contacts</a></li>
+                    <li class="nav__link"><a href="/news">news</a></li>
+                </ul>
+            </div>   
+            <div class="lines">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>     
+        </div>
+        <div class="text-box">
+            <h1 class="main-heading">
+                <span class="primary-heading">syfters</span>
+                <span class="sub-heading">get a house at a reasonable price</span>
+             </h1>    
+        </div>
+    </header>
+
+    <section class="projects projects__h2">
+        <div class="section-heading">our properties</div>
+        {% comment %} <div class="filter">
+            <a href="#" class="filter__list" data-id="all">
+                <p class="all">all</p>
+            </a>
+            <a href="#" class="filter__list" data-id="rent">
+                <p class="rent">rent</p>
+            </a>
+            <a href="#" class="filter__list" data-id="buy">
+                <p class="buy">buy</p>
+            </a>
+        </div> {% endcomment %}
+        <div class="projects__container">
+            {% for product in products%}
+                 <div class="project">
+                    <div class="project__img-box">
+                        <img src="{{product.image.url}}" alt="" class="project__img">
+                    </div>
+                    <div class="project__info">
+                        <div class="project__icons">
+                            {% comment %} <p class = "project__location">
+                                <svg class="project__icon">
+                                    <use xlink:href = "images/sprite.svg#icon-location"</use>
+                                </svg>
+                                {{product.name}}
+                            </p>
+                            <p class = "project__location">
+                                <svg class="project__icon">
+                                    <use xlink:href = "{% static 'sprite.svg#icon-edit-crop'%}"</use>
+                                </svg>
+                                {{product.size}}
+                            </p> {% endcomment %}
+
+                            <p class="project__location">{{product.name}}</p>
+                            
+                            <p class="project__location">{{product.size}}</p>
+                            
+                            <p class="project__location">D{{product.price}}</p>
+                            
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% comment %} <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects2.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            brusubi
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            220 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects3.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            kotu
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            300 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects4.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            sayang
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            205 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects5.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            burfut
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            500 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects6.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            kololi
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            510 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects7.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            banjul
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            9400 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects8.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            tanji
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            290 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects1.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            kerr sering
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            315 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects9.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            brikama
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            200 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects10.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            sukuta 
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            360 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects11.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            senegambia
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            380 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects12.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            kololi
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            3400 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects13.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            bakoteh
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            2240 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects14.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            wulinkama
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            2110 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects15.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            jabang
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            1610 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects16.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            gunjur
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            490 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <div class="project__img-box">
+                    <img src="images/projects18.jpg" alt="" class="project__img">
+                </div>
+                <div class="project__info">
+                    <div class="project__icons">
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-location"</use>
+                            </svg>
+                            bijilo
+                        </p>
+                        <p class = "project__location">
+                            <svg class="project__icon">
+                                <use xlink:href = "images/sprite.svg#icon-edit-crop"</use>
+                            </svg>
+                            510 M<sup>2</sup>
+                        </p>
+                    </div>
+                </div>
+            </div>   {% endcomment %}
+        </div>
+        
+    </section>
+
+    <footer class="footer">
+        <h3 class="footer__heading">absolute estate makes you feel at home</h3>
+        <div class="footer__box">
+            <ul class="footer__item">
+                <li><a href="" class="footer__link"> terms and services</a></li>
+                <li><a href="" class="footer__link">policy</a></li>
+                <li><a href="" class="footer__link"> security </a></li>
+                <li><a href="" class="footer__link"> sitemap </a></li>
+            </ul>
+        </div>
+        <div class="footer-social-media">
+            <a href="facebook.com">
+                <svg class="footer-social-media--icon">
+                    <use xlink:href ="{% static 'sprite.svg#icon-facebook'%}"></use>
+                </svg>
+            </a>
+            <a href="twitter.com">
+                <svg class="footer-social-media--icon">
+                    <use xlink:href ="images/sprite.svg#icon-twitter"></use>
+                </svg>
+            </a>
+            <a href="youtube.com">
+                <svg class="footer-social-media--icon">
+                    <use xlink:href ="{%static 'images/sprite.svg#icon-youtube'%}"></use>
+                </svg>
+            </a>
+        </div>
+        <p class="copyright">
+            copyright &copy; 2020
+        </p>
+    </footer>
+     <!--DEDICATED THIS WEB DESIGN TO MY LOVELY GRANDMA WHO PASSED AWAY RIGHT AFTER I COMPLETED THIS SITE
+     MY ALLAH GRANT HER THE HIGHTEST PLACE IN JANNAH "MBINKO" 26th-8-2020 AT THE AGE OF 101 -->
+    {% comment %} <link rel="stylesheet" href="{% static 'style/main.css'%}"> {% endcomment %}
+    <script src="{% static 'js/properties.js'%}"></script>
+    <script src="{% static 'js/app.js'%}"></script>
+</body>
+</html>

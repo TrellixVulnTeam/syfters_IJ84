@@ -8,3 +8,29 @@ class Product(models.Model):
     image = models.ImageField(upload_to='media')
 
 
+class BlogLeft(models.Model):
+    title = models.CharField(max_length=255)
+    time = models.DateField()
+    content = models.TextField()
+    image = models.ImageField(upload_to='media')
+
+
+class BlogRight(models.Model):
+    title = models.CharField(max_length=255)
+    time = models.DateField()
+    content = models.TextField()
+    image = models.ImageField(upload_to='media')
+
+
+class LatestBlogLeft(models.Model):
+    title = models.CharField(max_length=255)
+    time = models.DateField()
+    content = models.TextField(550)
+    image = models.ImageField(upload_to='media')
+
+
+class LatestBlogRight(models.Model):
+    title = models.CharField(max_length=255)
+    time = models.DateField()
+    content = models.TextField(550)
+    image = models.ImageField(upload_to='media')
